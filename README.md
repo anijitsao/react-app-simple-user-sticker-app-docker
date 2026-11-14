@@ -10,6 +10,7 @@ This is a _responsive web application_ for viewing in both Mobile and Desktop.
 
 Back end is implemented using [Node JS](https://nodejs.org/en/docs), [Express JS](https://expressjs.com/en/api.html) and [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). [Docker](https://docs.docker.com/language/nodejs/build-images/) is used to _containerize_ the application.
 
+![Node JS](https://img.shields.io/badge/Node_JS-22.1.3-FFCD11?logo=nodedotjs&logoColor=FFCD11) ![Express JS](https://img.shields.io/badge/Express_JS-4.18.2-006D41?logo=express) ![npm](https://img.shields.io/badge/npm-10.1.3-00CA8E?logo=npm) ![MongoDB](https://img.shields.io/badge/Mongo_DB-5.0.1-green?logo=mongodb) ![React JS](https://img.shields.io/badge/React_JS-18.2.0-61DAFB?logo=react) ![Jest](https://img.shields.io/badge/Jest-29.4.3-9146ff?logo=jest) ![Webpack](https://img.shields.io/badge/Webpack-5.74.0-8DD6F9?logo=webpack) ![HTML5](https://img.shields.io/badge/HTML-5.0.0-E34826?logo=html5) ![CSS3](https://img.shields.io/badge/CSS-3.0.0-663399?logo=css&logoColor=00B265) ![Winston](https://img.shields.io/badge/winston-3.8.2-687634?logo=pino&logoColor=687634) ![Docker](https://img.shields.io/badge/Docker-24.1.0-2496ED?logo=docker&logoColor=00B265)
 
 ## Features
 
