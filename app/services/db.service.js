@@ -1,16 +1,17 @@
 // dependencies
 
-import { sendResponse } from "./sendResponse.util.js";
+import { sendResponse } from "../utils/sendResponse.util";
 import {
   createConnectionToDB,
   closeConnectionToDB,
   selectDB,
-} from "./db.utils.js/index.js";
+} from "../utils/db.utils.js";
 
 // logger
-import { logger } from "./logs.utils.js/index.js";
+// import { logger } from "../utils/logs.utils.js";
 
 const { COLLECTION_USER_STICKER, SUCCESS, SERVER_ERR } = process.env;
+console.log("Env vars => ", process.env);
 
 const getAllUsers = async (req, res) => {
   const dbClient = createConnectionToDB();
@@ -28,7 +29,7 @@ const getAllUsers = async (req, res) => {
     sendResponse(SUCCESS, output, res);
   } catch (error) {
     let output = { message: "FAILED", error: JSON.stringify(error) };
-    logger.info("unable to get all the users", error);
+    // logger.info("unable to get all the users", error);
     sendResponse(SERVER_ERR, output, res);
   } finally {
     await closeConnectionToDB(dbClient);

@@ -1,26 +1,8 @@
 "use server";
+
+import { getAllUsers } from "services/db.service";
+
 export async function fetchUsers() {
-  const users = [
-    {
-      _id: 1,
-      name: "Anijit Sau",
-      designation: "Developer",
-    },
-    {
-      _id: 2,
-      name: "Paul Andif",
-      designation: "Explorer",
-    },
-    {
-      _id: 3,
-      name: "Mark Twain",
-      designation: "Writer",
-    },
-    {
-      _id: 4,
-      name: "Paul White",
-      designation: "Designer",
-    },
-  ];
+  const users = await getAllUsers();
   return users;
 }
