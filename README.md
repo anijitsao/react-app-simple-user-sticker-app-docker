@@ -1,14 +1,14 @@
 # react-app-simple-user-sticker-app-docker
 
-A Simple User Sticker Application using [React JS](https://react.dev/learn), a JavaScript library to make awesome UI by Facebook, [Node JS](https://nodejs.org/en/docs), [Express JS](https://expressjs.com/en/api.html) and [MongoDB](https://docs.mongodb.com/).
+A Simple User Sticker Application using [React JS](https://react.dev/learn), a JavaScript library to make awesome UI by Facebook, [Node JS](https://nodejs.org/en/docs), [Next JS](https://nextjs.org/docs) and [MongoDB](https://docs.mongodb.com/).
 
-This application uses **component oriented UI** creation paradigm. All components are written in [JSX](https://react.dev/learn/writing-markup-with-jsx) and ES6 style and are combined to get a single build for production purpose using [Webpack 5](https://webpack.js.org/concepts/).
+This application uses **component oriented UI** creation paradigm. All components are written in [JSX](https://react.dev/learn/writing-markup-with-jsx) and ES6 style and are combined to get a single build for production purpose using [Turbopack](https://nextjs.org/docs/app/api-reference/turbopack).
 
-[Babel](https://babeljs.io/docs/) is used to _transpile_ all [JSX](https://react.dev/learn/writing-markup-with-jsx) code to vanilla JavaScript. For UI creation [HTML5](https://www.w3schools.com/html/html5_intro.asp) and [CSS3](https://www.w3schools.com/css/) are used.
+[Speedy Web Compiler (SWC)](https://nextjs.org/docs/architecture/nextjs-compiler) is used to _transpile_ all [JSX](https://react.dev/learn/writing-markup-with-jsx) code to vanilla JavaScript. For UI creation [HTML5](https://www.w3schools.com/html/html5_intro.asp) and [CSS3](https://www.w3schools.com/css/) are used.
 
 This is a _responsive web application_ for viewing in both Mobile and Desktop.
 
-Back end is implemented using [Node JS](https://nodejs.org/en/docs), [Express JS](https://expressjs.com/en/api.html) and [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). [Docker](https://docs.docker.com/language/nodejs/build-images/) is used to _containerize_ the application. 
+Back end is implemented using [Node JS](https://nodejs.org/en/docs), [Next JS](https://nextjs.org/docs) and [MongoDB](https://docs.mongodb.com/) and [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). [Docker](https://docs.docker.com/language/nodejs/build-images/) is used to _containerize_ the application. 
 
 ![Node JS](https://img.shields.io/badge/Node_JS-26.4.0-FFCD11?logo=nodedotjs&logoColor=FFCD11) ![Next JS](https://img.shields.io/badge/Next_JS-16.4.6-006D41?logo=nextdotjs) ![pnpm](https://img.shields.io/badge/pnpm-12.18.0-00CA8E?logo=pnpm) ![MongoDB](https://img.shields.io/badge/Mongo_DB-7.9.0-green?logo=mongodb) ![React JS](https://img.shields.io/badge/React_JS-19.3.1-61DAFB?logo=react) ![Jest](https://img.shields.io/badge/Jest-30.5.2-9146ff?logo=jest) ![HTML5](https://img.shields.io/badge/HTML-5.0.0-E34826?logo=html5) ![CSS3](https://img.shields.io/badge/CSS-3.0.0-663399?logo=css&logoColor=00B265) ![pino](https://img.shields.io/badge/pino-10.4.0-687634?logo=pino&logoColor=687634) ![Docker](https://img.shields.io/badge/Docker-29.9.3-2496ED?logo=docker&logoColor=00B265)
 
@@ -29,7 +29,7 @@ Back end is implemented using [Node JS](https://nodejs.org/en/docs), [Express JS
 
 <br/>
 
-7. [Winston](https://github.com/winstonjs/winston#readme) logging added.
+7. [Pino](https://getpino.io/#/) logging is added.
 8. API call is done using [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 9. **Test Cases** are written using [Jest](https://jestjs.io/docs/getting-started) and [Supertest](https://www.npmjs.com/package/supertest).
 
