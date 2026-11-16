@@ -30,13 +30,6 @@ const UsersList = () => {
   // get all the users
   const getAllUsers = async () => {
     try {
-      // const response = await fetch(allConstants.getAllUsers, {
-      //   method: allConstants.methods.GET,
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      // });
-      //
       const responseJSON = await fetchUsers();
 
       // const responseJSON = await response.json();
@@ -59,7 +52,7 @@ const UsersList = () => {
     const { scrollHeight, scrollTop, clientHeight } = e.target;
     const bottom = scrollHeight - parseInt(scrollTop) - clientHeight;
     // fixing for Chrome
-    if (bottom <= 1) {
+    if (bottom <= 5) {
       console.log("Bottom reached");
       loadMoreUsers();
     }
