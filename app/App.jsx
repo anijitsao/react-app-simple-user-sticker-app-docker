@@ -3,7 +3,7 @@ import Title from "./components/Title";
 import UsersList from "./components/UsersList";
 
 // css
-import "./app.css";
+import "./styles/app.css";
 
 export default function App() {
   return (
