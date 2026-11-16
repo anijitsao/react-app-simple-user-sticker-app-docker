@@ -1,15 +1,7 @@
-import { createLogger, transports, format } from "winston";
-const { combine, timestamp, json } = format;
+import pino from "pino";
 
-const logger = createLogger({
-  // write log to a file debug.log as well as console
-  transports: [
-    new transports.File({
-      filename: "./logs/debug.log",
-      format: combine(timestamp(), json()),
-    }),
-    new transports.Console(),
-  ],
+const logger = pino({
+  timestamp: () => `,"time":"${new Date(Date.now()).toISOString()}"`,
 });
 
 export { logger };
