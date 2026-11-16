@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 # base image name
-FROM node
+FROM node:26-alpine3.24
 
 # working directory
 WORKDIR /app
