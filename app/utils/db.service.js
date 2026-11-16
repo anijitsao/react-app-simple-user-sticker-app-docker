@@ -1,14 +1,14 @@
 // dependencies
 
-import { sendResponse } from "./sendResponse.js";
+import { sendResponse } from "./sendResponse.util.js";
 import {
   createConnectionToDB,
   closeConnectionToDB,
   selectDB,
-} from "./dbHelpers.js";
+} from "./db.utils.js/index.js";
 
 // logger
-import { logger } from "./logOps.js";
+import { logger } from "./logs.utils.js/index.js";
 
 const { COLLECTION_USER_STICKER, SUCCESS, SERVER_ERR } = process.env;
 
