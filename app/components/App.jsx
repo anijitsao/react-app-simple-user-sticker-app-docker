@@ -1,9 +1,9 @@
 // components
-import Title from "./components/Title";
-import UsersList from "./components/UsersList";
+import Title from "./Title";
+import UsersList from "./UsersList";
 
 // css
-import "./styles/app.css";
+import "../styles/app.css";
 
 export default function App() {
   return (
