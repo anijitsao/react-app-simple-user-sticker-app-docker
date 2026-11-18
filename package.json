@@ -4,7 +4,7 @@
   "description": "A Simple User Sticker Application using [React JS](https://reactjs.org/docs/getting-started.html), a JavaScript library to make awesome UI by Facebook, [Node JS](https://nodejs.org/docs/latest-v8.x/api/), [Express JS](https://expressjs.com/en/api.html) and [MongoDB](https://docs.mongodb.com/).",
   "main": "index.js",
   "scripts": {
-    "test": "DOTENV_CONFIG_PATH=server/.env node --experimental-vm-modules  node_modules/jest/bin/jest.js --setupFiles dotenv/config ",
+    "test": "node_modules/.bin/vitest",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/anijitsao/react-app-simple-user-sticker-app-docker#readme",
   "devDependencies": {
-    "jest": "^30.5.2",
-    "supertest": "^7.3.2"
+    "supertest": "^7.3.2",
+    "vitest": "^5.1.1"
   },
   "dependencies": {
     "bcrypt-ts": "^9.0.3",

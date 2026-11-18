@@ -10,7 +10,7 @@ This is a _responsive web application_ for viewing in both Mobile and Desktop.
 
 Back end is implemented using [Node JS](https://nodejs.org/en/docs), [Next JS](https://nextjs.org/docs) and [MongoDB](https://docs.mongodb.com/) and [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). [Docker](https://docs.docker.com/language/nodejs/build-images/) is used to _containerize_ the application. 
 
-![Node JS](https://img.shields.io/badge/Node_JS-26.4.0-FFCD11?logo=nodedotjs&logoColor=FFCD11) ![Next JS](https://img.shields.io/badge/Next_JS-16.4.6-006D41?logo=nextdotjs) ![npm](https://img.shields.io/badge/npm-12.2.2-00CA8E?logo=npm) ![MongoDB](https://img.shields.io/badge/Mongo_DB-7.9.0-green?logo=mongodb) ![React JS](https://img.shields.io/badge/React_JS-19.3.1-61DAFB?logo=react) ![Jest](https://img.shields.io/badge/Jest-30.5.2-9146ff?logo=jest) ![HTML5](https://img.shields.io/badge/HTML-5.0.0-E34826?logo=html5) ![CSS3](https://img.shields.io/badge/CSS-3.0.0-663399?logo=css&logoColor=00B265) ![pino](https://img.shields.io/badge/pino-10.4.0-687634?logo=pino&logoColor=687634) ![Docker](https://img.shields.io/badge/Docker-29.9.3-2496ED?logo=docker&logoColor=00B265)
+![Node JS](https://img.shields.io/badge/Node_JS-26.4.0-FFCD11?logo=nodedotjs&logoColor=FFCD11) ![Next JS](https://img.shields.io/badge/Next_JS-16.4.6-006D41?logo=nextdotjs) ![npm](https://img.shields.io/badge/npm-12.2.2-00CA8E?logo=npm) ![MongoDB](https://img.shields.io/badge/Mongo_DB-7.9.0-green?logo=mongodb) ![React JS](https://img.shields.io/badge/React_JS-19.3.1-61DAFB?logo=react) ![Vitest](https://img.shields.io/badge/Vitest-5.1.1-00FF74?logo=vitest) ![HTML5](https://img.shields.io/badge/HTML-5.0.0-E34826?logo=html5) ![CSS3](https://img.shields.io/badge/CSS-3.0.0-663399?logo=css&logoColor=00B265) ![pino](https://img.shields.io/badge/pino-10.4.0-687634?logo=pino&logoColor=687634) ![Docker](https://img.shields.io/badge/Docker-29.9.3-2496ED?logo=docker&logoColor=00B265)
 
 ## Features
 
@@ -31,7 +31,7 @@ Back end is implemented using [Node JS](https://nodejs.org/en/docs), [Next JS](h
 
 7. [Pino](https://getpino.io/#/) logging is added.
 8. API call is done using [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
-9. **Test Cases** are written using [Jest](https://jestjs.io/docs/getting-started) and [Supertest](https://www.npmjs.com/package/supertest).
+9. **Test Cases** are written using [Vitest](https://vitest.dev/guide/) and [Supertest](https://www.npmjs.com/package/supertest).
 
 <!---
 <ul>
