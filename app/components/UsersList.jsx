@@ -51,7 +51,7 @@ const UsersList = () => {
     const { scrollHeight, scrollTop, clientHeight } = e.target;
     const bottom = scrollHeight - parseInt(scrollTop) - clientHeight;
     // fixing for Chrome
-    if (bottom <= 5) {
+    if (bottom <= 2) {
       console.log("Bottom reached");
       loadMoreUsers();
     }
