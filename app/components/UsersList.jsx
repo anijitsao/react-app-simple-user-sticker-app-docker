@@ -11,7 +11,7 @@ const UsersList = () => {
   // Initial state and its modifier function
   const [userData, setUserData] = useState({
     allUsers: [],
-    totalUsersFetched: false,
+    allUsersFetched: false,
   });
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,23 +24,22 @@ const UsersList = () => {
   // get all the users
   const getAllUsers = async () => {
     try {
-      if (!userData.totalUsersFetched) {
+      if (!userData.allUsersFetched) {
         const response = await fetchUsers(currentIndex);
 
         console.log("response is here ", response);
 
-        // fill the users array of the state
-        if (response.length > 0) {
-          setUserData({
-            ...userData,
-            allUsers: [...userData.allUsers, ...response],
-          });
-        } else {
-          setUserData({
-            ...userData,
-            totalUsersFetched: true,
-          });
-        }
+        // use call back style to stop the stale state problems
+        setUserData(function (prevState) {
+          return {
+            ...prevState,
+            allUsers:
+              prevState.allUsers[0]?._id !== response[0]?._id
+                ? [...prevState.allUsers, ...response]
+                : [...prevState.allUsers],
+            allUsersFetched: response.length === 0,
+          };
+        });
       }
     } catch (error) {
       console.log("Some Error occurred...", error);
@@ -58,7 +57,7 @@ const UsersList = () => {
   };
 
   const loadMoreUsers = () => {
-    if (!userData.totalUsersFetched) {
+    if (!userData.allUsersFetched) {
       // update the current index
       setCurrentIndex(
         currentIndex +
