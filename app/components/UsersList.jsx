@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 // components
-import ShowUser from "./ShowUser";
+import UserCard from "./UserCard";
 
 // server functions
 import { fetchUsers } from "../actions/user.actions";
@@ -57,7 +57,7 @@ const UsersList = () => {
     }
   };
 
-  const loadMoreUsers = async () => {
+  const loadMoreUsers = () => {
     if (!userData.totalUsersFetched) {
       // update the current index
       setCurrentIndex(
@@ -74,7 +74,7 @@ const UsersList = () => {
     <section className="users-list" onScroll={handleScroll}>
       {users?.length > 0
         ? users.map((user) => {
-            return <ShowUser {...user} key={user._id} />;
+            return <UserCard {...user} key={user._id} />;
           })
         : "Loading users..."}
     </section>
