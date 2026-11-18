@@ -1,9 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 
-// Constants
-import Constants from "./Constants";
-
 // components
 import ShowUser from "./ShowUser";
 
@@ -13,36 +10,38 @@ import { fetchUsers } from "../actions/user.actions";
 const UsersList = () => {
   // Initial state and its modifier function
   const [userData, setUserData] = useState({
-    users: [],
-    totalUsers: 0,
-    currentIndex: 0,
     allUsers: [],
+    totalUsersFetched: false,
   });
 
-  // initialize all of the Constants
-  const allConstants = Constants();
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // when the component is mounted get all users from back end
   useEffect(() => {
     getAllUsers();
-  }, []);
+  }, [currentIndex]);
 
   // get all the users
   const getAllUsers = async () => {
     try {
-      const responseJSON = await fetchUsers();
+      if (!userData.totalUsersFetched) {
+        const response = await fetchUsers(currentIndex);
 
-      // const responseJSON = await response.json();
-      console.log("response is here ", responseJSON);
-      const allUsers = [...responseJSON];
+        console.log("response is here ", response);
 
-      // fill the users array of the state
-      setUserData({
-        ...userData,
-        totalUsers: allUsers.length,
-        currentIndex: allConstants.permissibleUsersToShow,
-        allUsers,
-      });
+        // fill the users array of the state
+        if (response.length > 0) {
+          setUserData({
+            ...userData,
+            allUsers: [...userData.allUsers, ...response],
+          });
+        } else {
+          setUserData({
+            ...userData,
+            totalUsersFetched: true,
+          });
+        }
+      }
     } catch (error) {
       console.log("Some Error occurred...", error);
     }
@@ -58,19 +57,18 @@ const UsersList = () => {
     }
   };
 
-  const loadMoreUsers = () => {
-    if (userData.currentIndex < userData.totalUsers) {
+  const loadMoreUsers = async () => {
+    if (!userData.totalUsersFetched) {
       // update the current index
-      setUserData({
-        ...userData,
-        currentIndex:
-          userData.currentIndex + allConstants.permissibleUsersToShow,
-      });
+      setCurrentIndex(
+        currentIndex +
+          Number(process.env.NEXT_PUBLIC_PERMISSIBLE_USERS_TO_SHOW),
+      );
     }
   };
 
   // copying predefined number of users from the state
-  const users = userData.allUsers.slice(0, userData.currentIndex);
+  const users = userData.allUsers;
 
   return (
     <section className="users-list" onScroll={handleScroll}>

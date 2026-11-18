@@ -9,9 +9,10 @@ import {
 // logger
 import { logger } from "../utils/logs.utils.js";
 
-const { COLLECTION_USER_STICKER, SUCCESS, SERVER_ERR } = process.env;
+const { COLLECTION_USER_STICKER, SUCCESS, SERVER_ERR, RECORDS_LIMIT_TO_FETCH } =
+  process.env;
 
-const getAllUsers = async (req, res) => {
+const getAllUsers = async (skipRecords) => {
   const dbClient = createConnectionToDB();
 
   try {
@@ -21,6 +22,9 @@ const getAllUsers = async (req, res) => {
     const data = await db
       .collection(COLLECTION_USER_STICKER)
       .find({})
+      .sort({ _id: 1 })
+      .skip(skipRecords)
+      .limit(Number(RECORDS_LIMIT_TO_FETCH))
       .toArray();
 
     let output = data.length > 0 ? [...data] : [];
